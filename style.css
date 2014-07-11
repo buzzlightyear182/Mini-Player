@@ -189,9 +189,12 @@ button {
 
 #results {
   margin-top: 50px;
-  display: none;
   list-style: none;
   padding: 0;
+}
+
+.hide {
+  display: none;
 }
 
 #results li:nth-child(2n+1) {
