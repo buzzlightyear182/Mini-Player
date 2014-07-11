@@ -1,8 +1,7 @@
 (function (global) {
   'use strict';
 
-  var form = document.querySelector('form');
-  form.addEventListener('submit', function (event) {
+  document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault();
     var track = event.target[0].value.split(':')[2];
     fetchMetaData(track);
@@ -31,22 +30,19 @@
     document.querySelector('.author').innerHTML = track.artists[0].name;
     document.querySelector('.cover img').src = track.album.images[0].url;
     document.querySelector('#audio').src = track.preview_url;
+    document.querySelector('.btn-play').classList.remove('disabled');
   };
 
-  var playMusic = document.querySelector('.btn-play');
-  playMusic.addEventListener('click', function (event) {
-    event.preventDefault();
-
-    var song = document.querySelector('#audio');
-    song.play();
+  document.querySelector('.btn-play').addEventListener('click', function(event) {
+    var audio = document.querySelector('#audio');
+    var controls = document.querySelector('.btn-play');
+    if (audio.paused) {
+      controls.classList.add('playing');
+      audio.play();
+    } else {
+      controls.classList.remove('playing');
+      audio.pause();
+    }
   });
-
-  var pauseMusic = document.querySelector('.btn-play');
-  pauseMusic.addEventListener('click', function (event) {
-    event.preventDefault();
-
-    var song = document.querySelector('#audio');
-    song.pause();
-  })
 
 })(window);
