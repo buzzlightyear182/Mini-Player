@@ -39,7 +39,7 @@
 
   document.querySelector('.btn-play').addEventListener('click', function(event) {
     var audio = document.getElementById('audio');
-    if (audio.paused) {
+    if (audio.paused && audio.duration) {
       this.classList.add('playing');
       audio.play();
     } else {
