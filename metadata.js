@@ -19,7 +19,6 @@
     info.onload = function() {
       if (this.status === 200) {
         var response = JSON.parse(this.response);
-        console.log('onload response', response);
         displayInfo(response);
       }
     };
@@ -46,6 +45,11 @@
       this.classList.remove('playing');
       audio.pause();
     }
+  });
+
+  document.getElementById('audio').addEventListener('timeupdate', function(event) {
+    var audio = document.getElementById('audio');
+    document.querySelector('.seekbar progress').value = audio.currentTime;
   });
 
 })(window);
