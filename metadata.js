@@ -19,10 +19,17 @@
       if (this.status === 200) {
         var response = JSON.parse(this.response);
         console.log('onload response', response);
+        displayInfo(response);
       }
     };
 
     info.send();
+  };
+
+  var displayInfo = function(track) {
+    document.querySelector('.title').innerHTML = track.name;
+    document.querySelector('.author').innerHTML = track.artists[0].name;
+    document.querySelector('.cover img').src = track.album.images[0].url;
   };
 
 })(window);
