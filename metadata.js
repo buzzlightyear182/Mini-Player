@@ -30,6 +30,23 @@
     document.querySelector('.title').innerHTML = track.name;
     document.querySelector('.author').innerHTML = track.artists[0].name;
     document.querySelector('.cover img').src = track.album.images[0].url;
+    document.querySelector('#audio').src = track.preview_url;
   };
+
+  var playMusic = document.querySelector('.btn-play');
+  playMusic.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    var song = document.querySelector('#audio');
+    song.play();
+  });
+
+  var pauseMusic = document.querySelector('.btn-play');
+  pauseMusic.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    var song = document.querySelector('#audio');
+    song.pause();
+  })
 
 })(window);
