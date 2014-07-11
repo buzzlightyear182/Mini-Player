@@ -52,4 +52,52 @@
     document.querySelector('.seekbar progress').value = audio.currentTime;
   });
 
+  // document.querySelector('form').addEventListener('submit', function (event) {
+  //   event.preventDefault();
+  //   var track = event.target[0].value.split(':')[2];
+  //   fetchMetaData(track);
+  // });
+
+  // var fetchMetaData = function(track){
+  //   var info = new XMLHttpRequest();
+  //   var baseURL = "https://api.spotify.com/v1/tracks/";
+  //   info.open('GET', baseURL + track);
+
+  //   info.setRequestHeader('Accept', 'application/json');
+
+  //   info.onload = function() {
+  //     if (this.status === 200) {
+  //       var response = JSON.parse(this.response);
+  //       displayInfo(response);
+  //     }
+  //   };
+
+  //   info.send();
+  // };
+
+  document.getElementById('Search').addEventListener('submit', function(event) {
+    event.preventDefault();
+    var query = event.target[0].value;
+    searchItem(query);
+  }
+  );
+
+  var searchItem = function(query){
+    var searchRequest = new XMLHttpRequest();
+    var base_url = "https://api.spotify.com/v1/search?q=";
+    var searchURL = base_url + query + "&type=track&limit=5";
+    searchRequest.open('GET', searchURL);
+
+    searchRequest.setRequestHeader('Accept','application/json');
+
+    searchRequest.onload = function () {
+      if (this.status === 200) {
+        var results = JSON.parse(this.response);
+        console.log(results);
+      }
+    };
+
+    searchRequest.send();
+  };
+
 })(window);
