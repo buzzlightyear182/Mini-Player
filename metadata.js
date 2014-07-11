@@ -1,6 +1,8 @@
 (function (global) {
   'use strict';
 
+  var controls = document.querySelector('.btn-play');
+
   document.querySelector('form').addEventListener('submit', function (event) {
     event.preventDefault();
     var track = event.target[0].value.split(':')[2];
@@ -29,18 +31,19 @@
     document.querySelector('.title').innerHTML = track.name;
     document.querySelector('.author').innerHTML = track.artists[0].name;
     document.querySelector('.cover img').src = track.album.images[0].url;
-    document.querySelector('#audio').src = track.preview_url;
-    document.querySelector('.btn-play').classList.remove('disabled');
+    controls.classList.remove('disabled');
+    controls.classList.add('playing');
+    document.getElementById('audio').src = track.preview_url;
+    document.getElementById('audio').play();
   };
 
   document.querySelector('.btn-play').addEventListener('click', function(event) {
-    var audio = document.querySelector('#audio');
-    var controls = document.querySelector('.btn-play');
+    var audio = document.getElementById('audio');
     if (audio.paused) {
-      controls.classList.add('playing');
+      this.classList.add('playing');
       audio.play();
     } else {
-      controls.classList.remove('playing');
+      this.classList.remove('playing');
       audio.pause();
     }
   });
