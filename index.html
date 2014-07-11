@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Spotify preview widget</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Spotify preview widget</h1>
+
+    <div class="widget">
+      <div class="header">
+        <div class="btn-play disabled"></div>
+
+        <div class="metadata">
+          <p class="title">Song title</p>
+          <p class="author">Song author</p>
+
+          <div class="seekbar">
+            <progress value="13" max="30"></progress>
+          </div>
+        </div>
+      </div>
+      <div class="cover">
+        <img src="https://i.scdn.co/image/4df66c8b705efa6dd3be4e884fe2ca8779fd4fc9"/>
+      </div>
+
+      <audio id="audio"></audio>
+    </div>
+
+
+    <form>
+      <input type="text" name="track" value="spotify:track:7Bxv0WL7UC6WwQpk9TzdMJ" />
+      <button type="submit">Load track</button>
+    </form>
+
+    <ul id="results">
+      <li><a href="spotify:track:7Bxv0WL7UC6WwQpk9TzdMJ">
+        <span class="artist">artist name</span>
+        <span class="song">song name</span>
+      </a></li>
+    </ul>
+  </body>
+</html>
