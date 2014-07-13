@@ -1,3 +1,5 @@
+* { box-sizing: border-box; }
+
 body {
   background-color: #000000;
   font-family: 'Open Sans', 'Hevetica Neue', Helvetica, sans-serif;
@@ -200,6 +202,16 @@ input:hover {
 button {
   display: block;
   margin: auto;
+  padding: .4rem .8rem;
+  outline: 0;
+  border: 0;
+  background-color: #7AB800;
+  border-radius: 2px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: rgba(119,173,16, 1);
 }
 
 input[type="text"], textarea {
@@ -217,11 +229,11 @@ input[type="text"], textarea {
 }
 
 #results li {
-  background-color: #ecf0f1;
+  background-color: #7AB800;
 }
 
 #results li:nth-child(2n+1) {
-  background-color: #ccc;
+  background-color: rgba(99,153,0, 1);
 }
 
 #results li a {
@@ -232,11 +244,12 @@ input[type="text"], textarea {
 }
 
 #results li a:hover {
-  background-color: #aaa;
+  background-color: rgba(159,213,56, 1);
 }
 
 #results li a span {
-  width: 300px;
+  max-width: 300px;
+  max-width: 450px;
   margin: 0 auto;
   display: block;
   line-height: 1.3em;
