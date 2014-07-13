@@ -229,11 +229,11 @@ input[type="text"], textarea {
 }
 
 #results li {
-  background-color: #7AB800;
+  background-color: #ecf0f1;
 }
 
 #results li:nth-child(2n+1) {
-  background-color: rgba(99,153,0, 1);
+  background-color: #ccc;
 }
 
 #results li a {
@@ -244,7 +244,7 @@ input[type="text"], textarea {
 }
 
 #results li a:hover {
-  background-color: rgba(159,213,56, 1);
+  background-color: #aaa;
 }
 
 #results li a span {
