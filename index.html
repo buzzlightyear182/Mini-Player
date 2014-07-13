@@ -7,6 +7,8 @@
   </head>
   <body>
     <h1>Spotify preview widget</h1>
+    <img id="logo" src="spotify-logo.jpg">
+    <p id="subtitle">Play a 30-second preview of your favorite music!</p>
 
     <div class="widget">
       <div class="header">
@@ -28,8 +30,7 @@
       <audio id="audio"></audio>
     </div>
 
-
-    <form id ="URI">
+    <form id ="URI" class="empty">
       <input type="text" name="track" value="spotify:track:2rjOaGr1mcTYePllS8crRf" />
       <button type="submit">Load track</button>
     </form>
@@ -39,7 +40,7 @@
       <button type="submit">Search</button>
     </form>
 
-    <ul id="results">
+    <ul id="results" class="list empty">
       <li><a href="spotify:track:2rjOaGr1mcTYePllS8crRf">
         <span class="artist">artist name</span>
         <span class="song">song name</span>
