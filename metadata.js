@@ -90,7 +90,6 @@
       var anchor = document.createElement('a');
       var artist = document.createElement('span');
       var song = document.createElement('span');
-      var cover = document.createElement('img');
 
       var artist_text = concatArtists(songs[i].artists);
 
@@ -114,6 +113,7 @@
     var searchRequest = new XMLHttpRequest();
     var base_url = "https://api.spotify.com/v1/search?q=";
     var searchURL = base_url + encodeURIComponent(query) + "&type=track&limit=3";
+
     searchRequest.open('GET', searchURL);
 
     searchRequest.setRequestHeader('Accept','application/json');
